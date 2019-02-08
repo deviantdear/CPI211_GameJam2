@@ -20,9 +20,9 @@ public class SlowMotion : MonoBehaviour
             if (inSlowMo)
             {
                 //Sets normal time to switch to slow motion time
-                i = player.m_CharacterController.velocity.magnitude / player.m_WalkSpeed;
+                //i = player.m_CharacterController.velocity.magnitude / player.m_WalkSpeed;
                 Time.timeScale = normalTime;
-                Time.fixedDeltaTime = Mathf.Lerp(normalTime, slowMotion, i);
+                //Time.fixedDeltaTime = Mathf.Lerp(normalTime, slowMotion, i);
                 Time.fixedDeltaTime = 0.02f * Time.timeScale;
                 Debug.Log(Time.timeScale.ToString("0"));
                 inSlowMo = false;
@@ -33,9 +33,9 @@ public class SlowMotion : MonoBehaviour
             if (!inSlowMo)
             {
                 Time.timeScale = slowMotion;
-                i = player.m_CharacterController.velocity.magnitude / player.m_WalkSpeed;
+                //i = player.m_CharacterController.velocity.magnitude / player.m_WalkSpeed;
                 Time.fixedDeltaTime = 0.02f * Time.timeScale;
-                Time.fixedDeltaTime = Mathf.Lerp(slowMotion, normalTime, i);
+               // Time.fixedDeltaTime = Mathf.Lerp(slowMotion, normalTime, i);
                 Debug.Log(Time.timeScale.ToString("0"));
                 inSlowMo = true;
             }
