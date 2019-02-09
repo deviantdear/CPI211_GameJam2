@@ -8,7 +8,7 @@ public class SlowMotion : MonoBehaviour
     private float slowMotion = 0.1f;
     private float normalTime = 1.0f;
     private bool inSlowMo = false;
-    private float i = 0;
+   // private float i = 0;
 
     [SerializeField] private FirstPersonController player;
 
