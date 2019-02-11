@@ -18,7 +18,7 @@ public class health_manager : MonoBehaviour {
 		//death logic
 		if(health <= 0)
 		{
-			Destroy(gameObject);
+            Die();
 		}
 	}
 
@@ -26,4 +26,9 @@ public class health_manager : MonoBehaviour {
 	{
 		this.health -= damage;
 	}
+
+    public virtual void Die()
+    {
+        Destroy(gameObject);
+    }
 }

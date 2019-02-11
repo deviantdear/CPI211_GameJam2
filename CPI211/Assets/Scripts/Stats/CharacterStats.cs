@@ -9,7 +9,7 @@ public class CharacterStats : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth { get; private set; }
 
-    public Stat damage;
+    public int damage = 100;
 
     // Set current health to max health
     // when starting the game.

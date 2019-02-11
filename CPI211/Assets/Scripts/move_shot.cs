@@ -22,7 +22,7 @@ public class move_shot : MonoBehaviour
 	void OnTriggerEnter(Collider other)
 	{
 		//Debug.Log(other.gameObject.tag);
-		if(other.gameObject.tag == "EnemyAI")
+		if(other.gameObject.tag == "Enemy" || other.gameObject.tag == "Player")
 		{
 			//Debug.Log("Hit Something!");
 			other.GetComponent<health_manager>().doDamage(damage);			

@@ -11,5 +11,9 @@ public class EnemyStats : CharacterStats
         // Add death animation
 
         Destroy(gameObject);
+
+        // if no more enemies load new scene
+
+
     }
 }
