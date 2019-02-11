@@ -21,7 +21,8 @@ public class CharacterStats : MonoBehaviour
     // Damage the character
     public void TakeDamage(int damage)
     {
-        damage = 100;
+        //Prevents damage from ever being more or less than the max value and zero
+        damage = Mathf.Clamp(damage, 0, int.MaxValue);
 
         // Damage the character
         currentHealth -= damage;
