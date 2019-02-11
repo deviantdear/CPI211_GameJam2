@@ -9,6 +9,12 @@ public class EnemyController : MonoBehaviour
 
     Transform target;
     NavMeshAgent agent;
+    public GameObject shot;
+    public float shotTime = 1f;
+
+    private bool canShoot = true;
+    private float lastInput;
+    private float shotStartTime;
 
     // Start is called before the first frame update
     void Start()
@@ -24,13 +30,14 @@ public class EnemyController : MonoBehaviour
 
         if(distance <= lookRadius)
         {
-            agent.SetDestination(target.position);
+            //agent.SetDestination(target.position);
 
             if(distance <= agent.stoppingDistance)
             {
                 //Attack target
                 //Face target
                 FaceTarget();
+                ShootTarget();
             }
         }
     }
@@ -40,6 +47,24 @@ public class EnemyController : MonoBehaviour
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime*5f);
+    }
+
+    void ShootTarget()
+    {
+        if (canShoot)
+        {
+            canShoot = false;
+            shotStartTime = Time.time;
+            GameObject obj = GameObject.Instantiate(shot, transform.position, Quaternion.identity);
+            obj.GetComponent<move_shot>().direction = this.transform.forward;
+        }
+
+        //do logic for the timer
+        if ((Time.time - shotStartTime) >= shotTime)
+        {
+                canShoot = true;
+        }
+
     }
 
     private void OnDrawGizmos()
