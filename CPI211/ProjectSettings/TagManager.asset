@@ -17,11 +17,11 @@ TagManager:
   - 
   - PostProcessing
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PickUps
+  - Player
+  - Enemy
+  - Walls
+  - Boundaries
   - 
   - 
   - 
