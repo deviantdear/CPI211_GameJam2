@@ -9,6 +9,25 @@ public class SimpleMenu : MonoBehaviour
     public GameObject gameGUI;
     public GameObject endMenu;
 
+     void Start()
+    {
+        startMenu.SetActive(true);
+    }
+
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Return))
+        {
+            startMenu.SetActive(false);
+            gameGUI.SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Exit();
+        }
+    }
+
     public void startGame()
     {
         Time.timeScale = 1;

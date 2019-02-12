@@ -1,18 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
+
 
 public class LevelManager : MonoBehaviour
 {
-
-    public Transform player;
-    public int numLevels = 5;
-    public int currentLevel = 0;
-    public List<Transform> spawnPoints = new List<Transform>();
+    public GameObject player;
+    public int numLevels = 4;
+    public int currentLevel;
     public List<GameObject> gameLevels = new List<GameObject>();
-    public Text gameUI;
-    
+    public TextMeshProUGUI gameUI;
+
+    #region Singleton
+
+    public static LevelManager instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    #endregion
+
     // Start is called before the first frame update
     void Start()
     { 
@@ -27,15 +37,15 @@ public class LevelManager : MonoBehaviour
 
     void populateLevel(int level)
     {
-        if (level < numLevels)
+        if (level < numLevels && level >= 0)
         {
             gameLevels[level].SetActive(true);
-            player = spawnPoints[level].GetComponent<Transform>();
+            
             //update game UI
         }
         else
         {
-            gameUI.text = "You've reached the end of The Game";
+             gameUI.SetText("You've reached the end of The Game");
         }
 
     }
