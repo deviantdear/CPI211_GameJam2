@@ -50,12 +50,5 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            currentLevel++;
-            populateLevel(currentLevel);
-        }
-    }
+   
 }

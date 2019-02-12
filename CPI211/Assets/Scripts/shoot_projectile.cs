@@ -5,7 +5,7 @@ using UnityEngine;
 public class shoot_projectile : MonoBehaviour 
 {
 	public GameObject shot;
-	public float shotTime = 0.5f;
+	public float shotTime = 0.2f;
 
 	private bool canShoot = true;
 	private float lastInput;
