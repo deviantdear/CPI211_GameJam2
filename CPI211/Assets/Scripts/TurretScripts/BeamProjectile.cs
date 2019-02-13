@@ -24,6 +24,7 @@ public class BeamProjectile : BaseProjectile
         if (launcher)
         {
             m_launcher = launcher;
+            transform.SetParent(m_launcher.transform);
         }
     }
 }

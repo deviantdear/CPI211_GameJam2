@@ -21,9 +21,11 @@ public class NormalProjectile : BaseProjectile
     {
         if(launcher && target)
         {
+
             //provides consistent speed
             m_direction = (target.transform.position - launcher.transform.position).normalized;
             m_fired = true;
+            
         }
     }
 }

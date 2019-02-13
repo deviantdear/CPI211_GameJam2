@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 33133783653544196}
   - component: {fileID: 23968017354405962}
   - component: {fileID: 135217697658935378}
-  - component: {fileID: 114859402303098906}
   - component: {fileID: 114306283301539246}
   - component: {fileID: 54780157791576552}
   - component: {fileID: 6670543818659045434}
+  - component: {fileID: 9180213099350572906}
   m_Layer: 0
   m_Name: enemy shot
   m_TagString: Untagged
@@ -95,21 +95,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114859402303098906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060867908999348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32c2892877cd5034ba27b7374d25ac67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0, z: 0}
-  speed: 50
-  damage: 5
 --- !u!114 &114306283301539246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,3 +228,16 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &9180213099350572906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060867908999348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c9ad51f0de35a8419f83157eac63d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
