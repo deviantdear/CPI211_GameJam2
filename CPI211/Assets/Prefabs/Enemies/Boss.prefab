@@ -48,21 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67f2fc4d36a0b94282e0ec4fbba6d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
   player: {fileID: 0}
---- !u!114 &7595236328431890480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6159788831934153805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0725e33696c753440ab328ba2c16ff53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
 --- !u!114 &8399247566694464238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,8 +76,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 10
-  shot: {fileID: 1060867908999348, guid: aa168047ca3aebd468b964032b855f80, type: 3}
-  shotTime: 1
+  target: {fileID: 0}
+--- !u!114 &8800778884231338871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6159788831934153805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03c5fc417a902fc428cd8f5f1c9fc5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  damage: 10
 --- !u!1001 &6159788831934186221
 PrefabInstance:
   m_ObjectHideFlags: 0

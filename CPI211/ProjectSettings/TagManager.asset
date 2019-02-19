@@ -12,6 +12,7 @@ TagManager:
   - Zone2
   - Zone3
   - Zone4
+  - ammo
   layers:
   - Default
   - TransparentFX

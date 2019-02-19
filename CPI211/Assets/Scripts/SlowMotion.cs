@@ -10,12 +10,12 @@ public class SlowMotion : MonoBehaviour
     private bool inSlowMo = false;
    // private float i = 0;
 
-    [SerializeField] private FirstPersonController player;
+    [SerializeField] private RigidbodyFirstPersonController player;
 
     void Update()
     {
         //Check to see if the character is moving, if they are run at normal time. If not, run in slow motion
-       if(player.m_CharacterController.velocity.magnitude > 0)
+       if(player.m_RigidBody.velocity.magnitude > 0)
         {
             if (inSlowMo)
             {
