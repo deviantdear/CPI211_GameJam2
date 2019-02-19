@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
 {
     public GameObject player;
     private int numLevels = 5;
-    public int currentLevel;
+    public int currentLevel = 0;
     public List<GameObject> gameLevels = new List<GameObject>();
     public List<GameObject> playerPosition = new List<GameObject>();
     public TextMeshProUGUI gameUI;

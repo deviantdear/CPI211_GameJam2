@@ -6,8 +6,9 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     public float lookRadius = 10f;
-
+    Animator anim;
     public Transform target;
+    int attackID = Animator.StringToHash("Attack1");
     //NavMeshAgent agent;
 
 
@@ -15,6 +16,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         target = PlayerManager.instance.player.transform;
+        anim = GetComponent<Animator>();
        // agent = GetComponent<NavMeshAgent>();
     }
 
@@ -31,8 +33,7 @@ public class EnemyController : MonoBehaviour
          //   {
                 //Attack target
                 //Face target
-                FaceTarget();
-               
+                FaceTarget();  
          //   }
         }
     }
@@ -44,7 +45,10 @@ public class EnemyController : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime*5f);
     }
 
-    
+    void Attack()
+    {
+        anim.SetTrigger(attackID);
+    }
 
     private void OnDrawGizmos()
     {

@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
+using TMPro;
 
 public class SlowMotion : MonoBehaviour
 {
-    private float slowMotion = 0.1f;
+    private float slowMotion = 0.2f;
     private float normalTime = 1.0f;
     private bool inSlowMo = false;
+    public TextMeshProUGUI slowMotionText;
+    
    // private float i = 0;
 
     [SerializeField] private RigidbodyFirstPersonController player;
@@ -25,6 +28,7 @@ public class SlowMotion : MonoBehaviour
                 //Time.fixedDeltaTime = Mathf.Lerp(normalTime, slowMotion, i);
                 Time.fixedDeltaTime = 0.02f * Time.timeScale;
                 Debug.Log(Time.timeScale.ToString("0"));
+                slowMotionText.SetText("Slow Motion OFF");
                 inSlowMo = false;
             }
         }
@@ -37,6 +41,7 @@ public class SlowMotion : MonoBehaviour
                 Time.fixedDeltaTime = 0.02f * Time.timeScale;
                // Time.fixedDeltaTime = Mathf.Lerp(slowMotion, normalTime, i);
                 Debug.Log(Time.timeScale.ToString("0"));
+                slowMotionText.SetText("Slow Motion ON");
                 inSlowMo = true;
             }
         }
