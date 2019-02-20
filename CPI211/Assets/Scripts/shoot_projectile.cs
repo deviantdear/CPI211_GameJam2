@@ -5,7 +5,7 @@ using UnityEngine;
 public class shoot_projectile : MonoBehaviour 
 {
 	public GameObject shot;
-	public float shotTime = 0.5f;
+	public float shotTime = 0.2f;
 
 	private bool canShoot = true;
 	private float lastInput;
@@ -27,13 +27,13 @@ public class shoot_projectile : MonoBehaviour
 		if((Input.GetAxis("Fire1") > 0) && canShoot)
 		{
 			canShoot = false;
-			shotStartTime = Time.time;
+			shotStartTime = Time.unscaledTime;
 			GameObject obj = GameObject.Instantiate(shot, transform.position, Quaternion.identity);
 			obj.GetComponent<move_shot>().direction = this.transform.forward;
 		}
 
 		//do logic for the timer
-		if( (Time.time - shotStartTime) >= shotTime )
+		if( (Time.unscaledTime - shotStartTime) >= shotTime )
 		{
 			if(Input.GetAxis("Fire1") != lastInput)
 			{

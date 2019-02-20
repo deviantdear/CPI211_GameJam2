@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Bottle
   - EnemyAI
+  - Enemy
+  - Fire
+  - Zone1
+  - Zone2
+  - Zone3
+  - Zone4
+  - ammo
   layers:
   - Default
   - TransparentFX
